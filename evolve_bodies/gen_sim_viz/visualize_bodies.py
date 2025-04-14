@@ -11,7 +11,7 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
-import evolve_bodies.gen_sim_viz.body_trial as bt
+import evolve_bodies.gen_sim_viz.evolution_trial as evo
 import simulate_body_gui as sbg
 
 
@@ -35,7 +35,7 @@ def load_simulate_body(trial_number: int):
     df = pd.read_csv(filename)
     last = np.array(df.loc[1000]['body_w':'legh_4'])
 
-    urdf = bt.generate_urdf(last, trial_number)
+    urdf = evo.generate_urdf(last, trial_number)
     distance = sbg.simulate_body_gui(urdf)
 
     return distance

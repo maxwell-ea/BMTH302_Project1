@@ -1,10 +1,8 @@
 """
-© 2024 Emily Maxwell <maxwelea@rose-hulman.edu>
+© 2025 Emily Maxwell Outland <maxwelea@rose-hulman.edu>
 SPDX License: BSD-3-Clause
 
-Last Modified: 7/24/2024
-
-Genetic Algorithms Developed for AFRL Research 2024
+Last Modified: 04/09/2025
 
 This package, containing the GeneticAlgorithm parent class and its children, was created to make genetic algorithm models
 that are completely agnostic to the fitness function and to the details of the population, individual genetics, or
@@ -18,9 +16,8 @@ The fitness function (and therefore calculating the fitness of the population) a
 is to be handled outside the GeneticAlgorithm class and its children. This is to account for complex simulation-based
 fitness calculations, which could be calculated in other programs/programming languages, and so all models and their
 methods will be able to handle any properly encoded population.
-
-Distribution Statement: Distribution C / CUI
 """
 
 from genalgs.GeneticAlgorithm import GeneticAlgorithm
 from genalgs.Microbial import Microbial
+from genalgs.Recombination import Recombination
