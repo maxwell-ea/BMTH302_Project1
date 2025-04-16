@@ -37,9 +37,31 @@ def simulate_body(body:str, duration=10000, amplitude=(1, -1, -1, 1), phase_offs
     p.connect(p.DIRECT)
     p.setAdditionalSearchPath(pybullet_data.getDataPath())
     p.setGravity(0, 0, -9.8)
+    p.setRealTimeSimulation(0)
+
+    # Create plane for robot
+    # Define half extents for a 500x500 plane
+    half_extents = [250, 250, 0.1]
+
+    # Create collision shape
+    plane_collision = p.createCollisionShape(p.GEOM_BOX, halfExtents=half_extents)
+
+    # Create visual shape (visible in GUI)
+    plane_visual = p.createVisualShape(
+        shapeType=p.GEOM_BOX,
+        halfExtents=half_extents,
+        rgbaColor=[0.6, 0.6, 0.6, 1]
+    )
+
+    # Create the multibody with both collision and visual shapes
+    plane_body = p.createMultiBody(
+        baseMass=0,
+        baseCollisionShapeIndex=plane_collision,
+        baseVisualShapeIndex=plane_visual,
+        basePosition=[0, 0, -0.1]
+    )
 
     # Load plane and robot body
-    p.loadURDF("plane.urdf")
     robot_id = p.loadURDF(body)
 
     # Prepare body for simulation

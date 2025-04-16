@@ -7,7 +7,7 @@ evolution_trial.py
 Last Modified: 11/18/2024
 """
 
-import evolve_bodies.gen_sim_viz.generate_body as gb
+import three_crossover_evolution.gen_sim_viz.generate_body as gb
 import simulate_body_nogui as sb
 from genalgs import Microbial
 

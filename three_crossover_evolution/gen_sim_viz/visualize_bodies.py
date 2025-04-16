@@ -11,7 +11,7 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
-import evolve_bodies.gen_sim_viz.evolution_trial as evo
+import three_crossover_evolution.gen_sim_viz.evolution_trial as evo
 import simulate_body_gui as sbg
 
 

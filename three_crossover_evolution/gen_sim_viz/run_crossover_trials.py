@@ -9,12 +9,12 @@ Last Modified: 04/14/2025
 
 import three_crossover_trial as cross
 
-num_bodies = 20
+num_bodies = 50
 generations = 1000
-trials = 1
+trials = 2
 
 for i in range(trials):
-    actual_trial = i + 1
+    actual_trial = i + 4
     print(f"Starting trial {actual_trial}")
 
     final_state = cross.three_crossover_trial(num_bodies, generations, f"{actual_trial}")
